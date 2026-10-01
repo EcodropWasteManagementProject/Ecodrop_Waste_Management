@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">A clean city supported by EcoDrop</title><desc id="desc">Original illustration of a green city, recycling bins and leaves.</desc>
+  <defs><linearGradient id="sky" x1="0" x2="1"><stop stop-color="#dff8ee"/><stop offset="1" stop-color="#f5fbef"/></linearGradient><linearGradient id="hill" x1="0" x2="1"><stop stop-color="#0f8a67"/><stop offset="1" stop-color="#56bd73"/></linearGradient></defs>
+  <rect width="900" height="560" rx="32" fill="url(#sky)"/><circle cx="735" cy="115" r="60" fill="#ffd87a"/>
+  <path d="M0 400c160-95 280-62 410-7 160 68 280-15 490-76v243H0z" fill="url(#hill)"/>
+  <g fill="#164e43"><path d="M95 356h78V214h-78zM117 205l17-35 17 35z"/><path d="M215 365h108V167H215zM237 167l32-55 32 55z"/><path d="M360 374h75V235h-75zM380 225l17-35 17 35z"/><path d="M485 375h120V130H485zM510 130l35-65 35 65z"/></g>
+  <g fill="#b8e6c4"><rect x="235" y="195" width="18" height="25"/><rect x="270" y="195" width="18" height="25"/><rect x="510" y="165" width="22" height="30"/><rect x="550" y="165" width="22" height="30"/><rect x="510" y="220" width="22" height="30"/><rect x="550" y="220" width="22" height="30"/></g>
+  <g transform="translate(620 300)"><rect width="150" height="145" rx="20" fill="#fff"/><rect x="12" y="22" width="126" height="113" rx="14" fill="#12956f"/><path d="M44 44h62v12H44zM53 75c10-25 35-25 45 0l-13-7-3 28-12-19-13 8z" fill="#dff8ee"/><circle cx="42" cy="150" r="16" fill="#164e43"/><circle cx="110" cy="150" r="16" fill="#164e43"/></g>
+  <g fill="#0f8a67"><path d="M90 115c-35-20-54 13-19 32 15 8 35 3 43-14-10 2-18-5-24-18z"/><path d="M828 195c28-18 53 6 31 30-13 13-32 10-43-4 11 1 17-8 12-26z"/></g>
+</svg>
