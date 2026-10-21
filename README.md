@@ -66,52 +66,6 @@ The system connects citizens, waste collection vendors, and administrators throu
 
 ---
 
-## Development Strategy
-
-This project is being developed FRONTEND-FIRST.
-
-Order:
-
-1. Frontend foundation
-2. Frontend mock application
-3. Frontend quality/stability
-4. FastAPI backend
-5. PostgreSQL database
-6. Authentication
-7. Waste reports
-8. Pickup requests
-9. Vendor dashboard
-10. Admin dashboard
-11. AI assistant
-12. Eco points
-13. Notifications
-14. Analytics
-15. Testing
-16. Deployment
-17. Documentation
-
-See:
-
-- `ECODROP_MASTER_SPEC.md`
-- `DEVELOPMENT_PLAN.md`
-
-These files are the primary instructions for an AI coding agent.
-
----
-
-## Repository Structure
-
-```text
-EcoDrop/
-├── ECODROP_MASTER_SPEC.md
-├── DEVELOPMENT_PLAN.md
-├── README.md
-├── frontend/
-└── backend/
-```
-
----
-
 ## Frontend Development
 
 The frontend is developed first using mock data.
@@ -211,67 +165,10 @@ Typical server command:
 uvicorn app.main:app --reload
 ```
 
-Do not assume these commands are final until the project setup is complete.
-
----
-
-## Coding-Agent Rules
-
-The AI coding agent must:
-
-1. Read `ECODROP_MASTER_SPEC.md`.
-2. Read `DEVELOPMENT_PLAN.md`.
-3. Inspect the existing repository before modifying files.
-4. Work on one phase at a time.
-5. Avoid unnecessary dependencies.
-6. Never expose secrets.
-7. Never delete working functionality without explicit permission.
-8. Test every implemented feature.
-9. Keep the application runnable.
-10. Report changed files and testing results after each task.
-
----
-
-## Current Development Status
-
-### Phase 0
-Preparation — complete
-
-### Phase 1
-Frontend Foundation — complete
-
-### Phase 2
-Frontend Core Features — complete
-
-### Phase 3
-Frontend Quality Pass — complete
-
-### Phase 4
-Backend Foundation — complete
-
-### Phase 5
-Core database models — complete
-
-### Phase 5.1
-Backend and database verification — complete
-
-### Phase 6
-Authentication foundation — complete
-
-### Phase 7
-Waste reports — complete
-
----
-
-### Phase 8
-Pickup requests — next
-
+Do not assume these commands are final until the project setup is compl
 ---
 
 ## Project Goal
 
 Deliver a functional, tested, documented full-stack university project within the available project timeline.
 
-The priority is:
-
-**working core features > unnecessary complexity.**
