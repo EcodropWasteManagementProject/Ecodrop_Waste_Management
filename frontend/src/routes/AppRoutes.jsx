@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { Home } from '../pages/public/Home'
 import About from '../pages/public/About'
+import Projects from '../pages/public/Projects'
 import RecyclingGuide from '../pages/public/RecyclingGuide'
 import Login from '../pages/auth/Login'
 import Register from '../pages/auth/Register'
@@ -28,8 +29,24 @@ import AdminPickups from '../pages/admin/Pickups'
 import AdminAnalytics from '../pages/admin/Analytics'
 import DashboardLayout from '../components/layout/DashboardLayout'
 
+function SessionLoading() {
+  return (
+    <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4 text-slate-600">
+      Verifying your EcoDrop session...
+    </main>
+  )
+}
+
+function roleDashboard(role) {
+  return `/${role.toLowerCase()}/dashboard`
+}
+
 function ProtectedRoute({ children, role }) {
-  const { user } = useAuth()
+  const { user, isLoading } = useAuth()
+
+  if (isLoading) {
+    return <SessionLoading />
+  }
 
   if (!user) {
     return <Navigate to="/login" replace />
@@ -37,6 +54,20 @@ function ProtectedRoute({ children, role }) {
 
   if (role && user.role !== role) {
     return <Navigate to="/" replace />
+  }
+
+  return children
+}
+
+function AuthEntryRoute({ children }) {
+  const { user, isLoading } = useAuth()
+
+  if (isLoading) {
+    return <SessionLoading />
+  }
+
+  if (user) {
+    return <Navigate to={roleDashboard(user.role)} replace />
   }
 
   return children
@@ -51,9 +82,10 @@ export default function AppRoutes() {
     <Routes>
       <Route path="/" element={<PublicPage><Home /></PublicPage>} />
       <Route path="/about" element={<PublicPage><About /></PublicPage>} />
+      <Route path="/projects" element={<PublicPage><Projects /></PublicPage>} />
       <Route path="/recycling-guide" element={<PublicPage><RecyclingGuide /></PublicPage>} />
-      <Route path="/login" element={<PublicPage><Login /></PublicPage>} />
-      <Route path="/register" element={<PublicPage><Register /></PublicPage>} />
+      <Route path="/login" element={<AuthEntryRoute><PublicPage><Login /></PublicPage></AuthEntryRoute>} />
+      <Route path="/register" element={<AuthEntryRoute><PublicPage><Register /></PublicPage></AuthEntryRoute>} />
 
       <Route path="/citizen/dashboard" element={<ProtectedRoute role="CITIZEN"><DashboardLayout role="CITIZEN" title="Citizen Dashboard" subTitle="Overview of your waste activity and updates."><CitizenDashboard /></DashboardLayout></ProtectedRoute>} />
       <Route path="/citizen/reports" element={<ProtectedRoute role="CITIZEN"><DashboardLayout role="CITIZEN" title="My Reports" subTitle="Track your waste reports and follow-up actions."><CitizenReports /></DashboardLayout></ProtectedRoute>} />

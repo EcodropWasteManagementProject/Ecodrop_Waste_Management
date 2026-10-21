@@ -238,16 +238,33 @@ The AI coding agent must:
 Preparation — complete
 
 ### Phase 1
-Frontend Foundation — NEXT
+Frontend Foundation — complete
 
 ### Phase 2
-Frontend Core Features — pending
+Frontend Core Features — complete
 
 ### Phase 3
-Frontend Quality Pass — pending
+Frontend Quality Pass — complete
 
-### Phase 4+
-Backend and integration — pending
+### Phase 4
+Backend Foundation — complete
+
+### Phase 5
+Core database models — complete
+
+### Phase 5.1
+Backend and database verification — complete
+
+### Phase 6
+Authentication foundation — complete
+
+### Phase 7
+Waste reports — complete
+
+---
+
+### Phase 8
+Pickup requests — next
 
 ---
 

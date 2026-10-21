@@ -1,10 +1,12 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import Button from '../common/Button'
+import Logo from '../common/Logo'
 
 const publicLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
+  { to: '/projects', label: 'Our Projects' },
   { to: '/recycling-guide', label: 'Recycling Guide' },
 ]
 
@@ -20,10 +22,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-2 text-lg font-bold text-slate-900">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">E</span>
-          EcoDrop
-        </Link>
+        <Logo />
 
         <nav className="hidden items-center gap-6 md:flex">
           {publicLinks.map((link) => (

@@ -2,7 +2,23 @@ import { Link } from 'react-router-dom'
 import Button from '../../components/common/Button'
 import Navbar from '../../components/layout/Navbar'
 import Footer from '../../components/layout/Footer'
+import { assets } from '../../assets'
 import { publicFactCards } from '../../data/mockData'
+
+const featureImages = {
+  'Faster waste reporting': {
+    src: assets.reportingFeature,
+    alt: 'Color-coded recycling and waste bins in a city',
+  },
+  'Smarter recycling guidance': {
+    src: assets.guidanceFeature,
+    alt: 'Hands planting a small green seedling in soil',
+  },
+  'Transparent pickups': {
+    src: assets.pickupsFeature,
+    alt: 'A person carrying a bag of sorted glass recyclables',
+  },
+}
 
 const steps = [
   'Create your account in a few seconds',
@@ -40,19 +56,26 @@ export function Home() {
               </div>
             </div>
 
-            <div className="rounded-3xl bg-gradient-to-br from-emerald-500 to-emerald-700 p-8 text-white shadow-xl">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl bg-white/10 p-5 backdrop-blur-sm">
-                  <p className="text-sm text-emerald-100">Active reports</p>
-                  <p className="mt-3 text-3xl font-bold">2,480</p>
-                </div>
-                <div className="rounded-2xl bg-white/10 p-5 backdrop-blur-sm">
-                  <p className="text-sm text-emerald-100">Pickups completed</p>
-                  <p className="mt-3 text-3xl font-bold">1,964</p>
-                </div>
-                <div className="rounded-2xl bg-white/10 p-5 backdrop-blur-sm sm:col-span-2">
-                  <p className="text-sm text-emerald-100">Eco impact</p>
-                  <p className="mt-3 text-3xl font-bold">18.2 tons diverted</p>
+            <div className="relative isolate overflow-hidden rounded-3xl shadow-xl">
+              <img
+                src={assets.homepageImage}
+                alt="EcoDrop community members recycling and sorting waste in a greener city"
+                className="h-[340px] w-full object-cover sm:h-[400px] lg:h-[440px]"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-900/60 to-transparent p-4 pt-16 text-white sm:p-6 sm:pt-20">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
+                    <p className="text-xs text-emerald-100 sm:text-sm">Active reports</p>
+                    <p className="mt-1 text-2xl font-bold sm:text-3xl">42</p>
+                  </div>
+                  <div className="rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
+                    <p className="text-xs text-emerald-100 sm:text-sm">Pickups completed</p>
+                    <p className="mt-1 text-2xl font-bold sm:text-3xl">36</p>
+                  </div>
+                  <div className="col-span-2 rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
+                    <p className="text-xs text-emerald-100 sm:text-sm">Estimated eco impact</p>
+                    <p className="mt-1 text-2xl font-bold sm:text-3xl">4.8 tons diverted</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -68,15 +91,31 @@ export function Home() {
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {publicFactCards.map((card) => (
-                <div key={card.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-700">
-                    ✓
+                <article key={card.title} className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
+                  <img
+                    src={featureImages[card.title].src}
+                    alt={featureImages[card.title].alt}
+                    loading="lazy"
+                    className="h-52 w-full object-cover"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-slate-900">{card.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">{card.description}</p>
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900">{card.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{card.description}</p>
-                </div>
+                </article>
               ))}
             </div>
+            <p className="mt-5 text-center text-xs text-slate-500">
+              Feature photos from{' '}
+              <a className="underline underline-offset-2 hover:text-emerald-700" href="https://unsplash.com" target="_blank" rel="noreferrer">
+                Unsplash
+              </a>
+              {' '}and{' '}
+              <a className="underline underline-offset-2 hover:text-emerald-700" href="https://pexels.com" target="_blank" rel="noreferrer">
+                Pexels
+              </a>
+              .
+            </p>
           </div>
         </section>
 
