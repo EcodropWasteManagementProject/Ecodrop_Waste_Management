@@ -164,8 +164,6 @@ Typical server command:
 ```bash
 uvicorn app.main:app --reload
 ```
-
-Do not assume these commands are final until the project setup is compl
 ---
 
 ## Project Goal
